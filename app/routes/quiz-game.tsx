@@ -1,5 +1,6 @@
+import React from 'react';
 import type { Route } from '../+types/root';
-import HomePage from '../pages/home';
+import QuizGamePage from '../pages/quiz-game/index';
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -8,8 +9,6 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-const Home = () => {
-  return <HomePage />;
-};
+const QuizGame = () => <QuizGamePage />;
 
-export default Home;
+export default QuizGame;
