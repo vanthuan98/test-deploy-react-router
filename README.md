@@ -1,6 +1,6 @@
-# Welcome to React Router!
+# Vocab Master - Vocabulary Learning PWA
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A modern, production-ready Progressive Web App for learning vocabulary with interactive games and spaced repetition techniques.
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
 
@@ -13,6 +13,13 @@ A modern, production-ready template for building full-stack React applications u
 - 🔒 TypeScript by default
 - 🎉 TailwindCSS for styling
 - 📖 [React Router docs](https://reactrouter.com/)
+- 🎮 Interactive vocabulary games
+- 📚 Choose correct meaning game
+- 🔤 Choose correct word game
+- 💾 Local storage for learning progress
+- 📱 Progressive Web App (PWA) support
+- 🎯 Spaced repetition learning
+- 📊 Learning statistics tracking
 
 ## Getting Started
 
@@ -82,6 +89,25 @@ Make sure to deploy the output of `npm run build`
 
 This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
 
+## Game Modes
+
+### Choose Correct Meaning Game
+
+Players are shown a word and must select the correct meaning from multiple choice options. This helps reinforce vocabulary comprehension.
+
+### Choose Correct Word Game
+
+Players are shown a meaning and must select the correct word from multiple choice options. This helps improve word recognition and recall.
+
+## Learning Features
+
+- **Spaced Repetition**: Words are prioritized based on learning progress
+- **Progress Tracking**: Local storage tracks learned words and correct answer counts
+- **Adaptive Difficulty**: Games focus on unlearned words first
+- **Visual Feedback**: Immediate feedback on correct/incorrect answers
+- **Statistics**: Track learning progress and performance
+
 ---
 
 Built with ❤️ using React Router.
+# test-deploy-react-router
