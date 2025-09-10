@@ -21,7 +21,7 @@ export const FillInTheBlankQuestion: React.FC<FillInTheBlankQuestionProps> = ({
   const afterBlank = question.sentence.substring(question.blankPosition + 5); // 5 là độ dài của "_____"
 
   return (
-    <div className='w-full max-w-md mx-auto py-6'>
+    <div className='w-full px-5 py-6'>
       {/* Hiển thị câu có chỗ trống */}
       <div className='bg-white mb-6'>
         <div className='text-lg text-gray-700 leading-relaxed mb-4'>

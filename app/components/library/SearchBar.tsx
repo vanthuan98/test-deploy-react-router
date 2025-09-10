@@ -34,8 +34,11 @@ const SearchBar: React.FC<SearchBarProps> = ({
           value={query}
           onChange={e => onQueryChange(e.target.value)}
           placeholder='Search vocabulary...'
-          className='border-1 border-black px-2 py-2 text-sm w-full pr-10'
-          style={{ boxShadow: '1px 2px 0px 0px #000' }}
+          className='border-1 border-black px-2 py-2 w-full pr-10'
+          style={{
+            boxShadow: '1px 2px 0px 0px #000',
+            fontSize: '16px', // Ngăn mobile zoom khi focus
+          }}
         />
         {query && (
           <button

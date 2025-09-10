@@ -94,23 +94,21 @@ const ChooseCorrectWordGamePage = () => {
   }
 
   return (
-    <GameLayout>
-      <div className='w-full max-w-md'>
-        <GameQuestionComponent
-          question={currentQuestion}
-          isAnswered={isAnswered}
-          selectedAnswer={selectedAnswer}
-          onAnswerSelect={handleAnswerSelect}
-          gameType='word'
-        />
+    <div className='w-full px-5'>
+      <GameQuestionComponent
+        question={currentQuestion}
+        isAnswered={isAnswered}
+        selectedAnswer={selectedAnswer}
+        onAnswerSelect={handleAnswerSelect}
+        gameType='word'
+      />
 
-        <div className='text-center'>
-          <p className='font-light text-base'>
-            Điểm: {score} | Câu: {currentQuestionIndex + 1}/{questions.length}
-          </p>
-        </div>
+      <div className='text-center'>
+        <p className='font-light text-base'>
+          Điểm: {score} | Câu: {currentQuestionIndex + 1}/{questions.length}
+        </p>
       </div>
-    </GameLayout>
+    </div>
   );
 };
 

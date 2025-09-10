@@ -1,6 +1,4 @@
 import React, { useMemo, useState } from 'react';
-import Header from '../../components/common/Header';
-import BottomMenu from '../../components/common/BottomMenu';
 import SearchBar, {
   type LibraryStatus,
 } from '../../components/library/SearchBar';
@@ -12,7 +10,7 @@ import { useLearnedWords } from '../../hooks/useLearnedWords';
  * Library page shows full vocabulary list with a search box
  * and learned status. Users can quickly find a word.
  */
-const LibraryPage: React.FC = () => {
+const LibraryPage = () => {
   const [query, setQuery] = useState('');
   const { isWordLearned } = useLearnedWords();
   const [status, setStatus] = useState<LibraryStatus>('all');
@@ -32,10 +30,8 @@ const LibraryPage: React.FC = () => {
   }, [query, status, isWordLearned]);
 
   return (
-    <div className='min-h-screen bg-white'>
-      <Header />
-
-      <div className='p-4'>
+    <div className='w-full h-full px-5 pt-5'>
+      <div className='pb-5'>
         <SearchBar
           query={query}
           onQueryChange={setQuery}
@@ -44,11 +40,9 @@ const LibraryPage: React.FC = () => {
         />
       </div>
 
-      <div className='px-4 pb-28'>
+      <div className='pb-28'>
         <VocabList data={filtered} />
       </div>
-
-      <BottomMenu />
     </div>
   );
 };

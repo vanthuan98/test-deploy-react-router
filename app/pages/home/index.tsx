@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useStreak } from '../../hooks';
-import Header from '../../components/common/Header';
 import VocabCard from '../../components/common/VocabCard';
-import BottomMenu from '../../components/common/BottomMenu';
 import wordsData from '../../assets/data/words.json';
 
 export function meta({}: Record<string, unknown>) {
@@ -11,6 +9,8 @@ export function meta({}: Record<string, unknown>) {
     { name: 'description', content: 'Vocabulary Master' },
   ];
 }
+
+const TIME_REMAINING = 7;
 
 const HomePage = () => {
   const { markStudiedToday } = useStreak();
@@ -29,7 +29,7 @@ const HomePage = () => {
   const dragDistance = useRef(0);
 
   // State cho progress bar đếm ngược
-  const [timeRemaining, setTimeRemaining] = useState(5);
+  const [timeRemaining, setTimeRemaining] = useState(TIME_REMAINING);
   const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   // Hàm random 1 từ mới
@@ -50,7 +50,7 @@ const HomePage = () => {
   const handleStart = () => {
     randomWord();
     // Reset progress bar
-    setTimeRemaining(5);
+    setTimeRemaining(TIME_REMAINING);
 
     // Start progress countdown
     if (progressIntervalRef.current) {
@@ -60,7 +60,7 @@ const HomePage = () => {
       setTimeRemaining(prev => {
         if (prev <= 0) {
           randomWord();
-          return 5; // Reset về 5 giây
+          return TIME_REMAINING; // Reset về 7 giây
         }
         return prev - 1;
       });
@@ -77,7 +77,7 @@ const HomePage = () => {
       clearInterval(progressIntervalRef.current);
     }
     // Reset progress bar
-    setTimeRemaining(5);
+    setTimeRemaining(TIME_REMAINING);
 
     // Start learning
     handleStart();
@@ -272,10 +272,7 @@ const HomePage = () => {
   }, [floatButtonPosition]);
 
   return (
-    <div className='min-h-screen bg-white'>
-      {/* Header */}
-      <Header />
-
+    <div className='w-full'>
       {/* Progress Bar đếm ngược */}
       <div className='px-5 py-3 bg-gray-100'>
         <div className='flex items-center justify-between mb-2'>
@@ -290,7 +287,7 @@ const HomePage = () => {
           <div
             className='bg-blue-500 h-2 rounded-full transition-all duration-1000 ease-linear'
             style={{
-              width: `${(timeRemaining / 5) * 100}%`,
+              width: `${(timeRemaining / TIME_REMAINING) * 100}%`,
             }}
           ></div>
         </div>
@@ -333,9 +330,6 @@ const HomePage = () => {
           Tiếp theo
         </button>
       </div>
-
-      {/* Bottom Menu */}
-      <BottomMenu />
     </div>
   );
 };

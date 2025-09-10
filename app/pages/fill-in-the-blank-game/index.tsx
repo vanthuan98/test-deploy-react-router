@@ -94,14 +94,12 @@ const FillInTheBlankGamePage = () => {
   }
 
   return (
-    <GameLayout>
-      <FillInTheBlankQuestion
-        question={currentQuestion}
-        onAnswerSelect={handleAnswerSelect}
-        selectedAnswer={selectedAnswer}
-        isAnswered={isAnswered}
-      />
-    </GameLayout>
+    <FillInTheBlankQuestion
+      question={currentQuestion}
+      onAnswerSelect={handleAnswerSelect}
+      selectedAnswer={selectedAnswer}
+      isAnswered={isAnswered}
+    />
   );
 };
 
