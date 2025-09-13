@@ -10,7 +10,7 @@ export function meta({}: Record<string, unknown>) {
   ];
 }
 
-const TIME_REMAINING = 7;
+const TIME_REMAINING = 10;
 
 const HomePage = () => {
   const { markStudiedToday } = useStreak();
