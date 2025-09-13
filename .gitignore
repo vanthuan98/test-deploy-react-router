@@ -5,3 +5,6 @@
 /.react-router/
 /build/
 /bundle-size.html
+
+# Build output
+/dev-dist/
